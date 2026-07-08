@@ -1,55 +1,79 @@
+:root{
+    --ink:#16181B;
+    --steel:#3A3F44;
+    --steel-light:#565D64;
+    --chalk:#EDEAE3;
+    --chalk-dim:#B9B6AD;
+    --plate:#59189f;
+    --radius:2px;
+}
+
+
 html {
-  background-color: #f1f5f9;
+  background-color: var(--ink);
   font-family: sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5;
+  background: var(--ink);
+  color: var(--chalk);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
+h1,h2,h3 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 /* nav styles */
 .menu {
-  background-color: #0d0950;
+  background-color: var(--plate);
   border: none;
-  color: #fff;
+  color: var(--chalk);
   font-size: 1.2rem;
   font-weight: bold;
   padding: 5px 10px;
 }
 
 .nav-links {
-  width: 100%;
-  display: none;
-  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 28px;
 }
 
 .nav-links a {
-  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--chalk-dim);
+  transition:color 0.2s;
+  text-decoration: none;
+
   text-align: center;
   padding: 10px 0;
-  text-decoration: none;
-  font-size: 1.2rem;
+  
   font-weight: bold;
-  text-transform: uppercase;
-  color: #0d0950;
+  
 }
 
 .nav-links a:hover,
-.nav-links a:focus{
-  background-color: #ff9776;
+.nav-links a:focus-visible {
+  color: var(--chalk);
+  outline: none;
+}
+
+.nav-links a:focus-visible {
+  text-decoration: underline var(--plate) 2px;
 }
 
 :has(.menu[aria-expanded="true"]) .nav-links {
@@ -76,7 +100,7 @@ h1 {
 }
 
 html.dark {
-  background-color: #0d0950;
+  background-color: #16181B;
   color: #fff;
 }
 
@@ -87,7 +111,7 @@ html.dark {
 
 .dark .nav-links a:hover,
 .dark .nav-links a:focus {
-  color: #0d0950;
+  color: #16181B;
 }
 
 .dark .nav-links a {
