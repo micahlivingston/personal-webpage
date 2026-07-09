@@ -1,18 +1,18 @@
 ---
 import Social from '../components/Social.astro';
+import LinkedIn from '../components/LinkedIn.astro';
+import GitHub from '../components/GitHub.astro';
+import Strava from '../components/Strava.astro';
 ---
 
-<style>
-    footer {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
-    }
-</style>
-
 <footer>
-  <p>Learn more about my projects on <Social platform="github" username="micahlivingston" />!</p>
-  <Social platform="linkedin" username="micahlivingston" />
-  <Social platform="twitter" username="micahlivingston" />
-  <Social platform="youtube" username="micahlivingston" />
+    <p>Connect with me on: </p>
+    <div class="footer-links">  
+        <Social platform="github" username="micahlivingston" /> 
+        <GitHub />
+        <Social platform="linkedin" username="micahlivingston" /> 
+        <LinkedIn /> 
+        <Social platform="strava" username="athletes/146825609" />
+        <Strava />
+    </div>
 </footer>
