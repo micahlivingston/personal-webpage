@@ -1,11 +1,32 @@
+@import "@fontsource/inter";
+@import "@fontsource/space-grotesk";
+@import "@fontsource/jetbrains-mono";
+@import "@fontsource/geist-mono";
+@import "@fontsource/ibm-plex-mono";
+@import "@fontsource/manrope";
+@import "@fontsource/elms-sans";
+@import "@fontsource/tasa-explorer";
+@import "@fontsource/lexend-exa";
+
 :root{
-    --ink:#16181B;
-    --steel:#3A3F44;
-    --steel-light:#565D64;
-    --chalk:#EDEAE3;
-    --chalk-dim:#B9B6AD;
-    --plate:#59189f;
-    --radius:2px;
+  --inter: "Inter", sans-serif;
+  --space-grotesk: "Space Grotesk", sans-serif;
+  --geist-mono: "Geist Mono", monospace;
+  --jetbrains-mono: "JetBrains Mono", monospace;
+  --ibm: "IBM Plex Mono", monospace;
+  --manrope: "Manrope", sans-serif;
+  --elms-sans: "Elms Sans", sans-serif;
+  --tasa-explorer: "TASA Explorer", sans-serif;
+  --lexend-exa: "Lexend Exa", monospace;
+  --ink:#16181B;
+  --steel:#3A3F44;
+  --steel-light:#565D64;
+  --chalk:#EDEAE3;
+  --chalk-dim:#aaa599; /* old value B9B6AD*/
+  --purple:#16032b;
+  --navy: #0f172a;
+  --light-purple: #7739b9;
+  --radius:2px;
 }
 
 
@@ -16,9 +37,13 @@ html {
 }
 
 body {
-  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
   color: var(--chalk);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--manrope);
   line-height: 1.6;
 }
 
@@ -29,10 +54,27 @@ body {
 }
 
 h1 {
-  font-family: 'Oswald', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--space-grotesk);
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  color: var(--chalk-dim)
+  letter-spacing: 10px;
+  color: var(--chalk-dim);
+  font-size: 75px;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--manrope);
 }
 
 /* nav styles */
@@ -41,13 +83,21 @@ nav {
   display: flex;
   align-items: center;
   width: 100%;
-  border-bottom:1px solid rgba(237,234,227,0.08);
+  border-bottom: 1px solid rgba(237,234,227,0.08);
+  background-color: var(--purple);
+  background-image:
+    /* front line, brighter/closer */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200' preserveAspectRatio='none'><path d='M0,160 L120,90 L200,140 L300,60 L420,150 L520,110 L620,170 L740,80 L860,150 L980,100 L1100,160 L1200,120' fill='none' stroke='rgba(148,163,184,0.35)' stroke-width='7'/></svg>"),
+    /* back line, dimmer/further */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200' preserveAspectRatio='none'><path d='M0,130 L150,50 L280,120 L400,40 L540,130 L660,70 L800,140 L920,60 L1050,120 L1200,80' fill='none' stroke='rgba(148,163,184,0.18)' stroke-width='7'/></svg>");
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom center, bottom center;
+  background-size: 100% 75%, 100% 85%;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1rem;
   margin-left: auto;
 }
 
@@ -59,7 +109,7 @@ nav {
 }
 
 .nav-links a {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-code2);
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -76,7 +126,7 @@ nav {
 }
 
 .nav-links a:focus-visible {
-  text-decoration: underline var(--plate) 2px;
+  text-decoration: underline var(--purple) 2px;
 }
 
 :has(.menu[aria-expanded="true"]) .nav-links {
@@ -113,6 +163,7 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
+  background-color: var(--purple);
 }
 
 .footer-links {
@@ -122,24 +173,35 @@ footer {
 }
 
 footer p{
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   margin-left: 20px;
+  margin-right: 0px;
   color: white;
   text-decoration: none;
-  font-family:'JetBrains Mono';
+  font-family: var(--jestbrains-mono);
   font-size:13px;
   letter-spacing:0.12em;
 }
 
 .footer-links a{
   margin-left: 10px;
+  margin-right: -10px;
   padding: 10px;
   color: white;
   text-decoration: none;
-  font-family:'JetBrains Mono';
+  font-family: var(--jetbrains-mono);
   font-size:13px;
   letter-spacing:0.12em;
+}
+
+.footer-info{
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 20px;
+  font-size: 12px;
+  font-family: var(--jetbrains-mono);
 }
 
 /* hero */
@@ -148,34 +210,56 @@ footer p{
 .hero{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  padding: 0 40px;
+  position: relative;
+  overflow: hidden;
 }
 
+.hero h1{
+  font-size:clamp(48px,9vw,120px);
+  font-weight:700;line-height:0.95;
+  max-width:16ch;
+  font-family: var(--space-grotesk);
+}
+
+.hero p{
+  margin-top:24px;
+  font-size:18px;color:var(--chalk-dim);
+  font-family: var(--manrope);
+}
+
+.hero-cta{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;}
+
 .eyebrow{
-    font-family:'JetBrains Mono';font-size:13px;color:var(--plate);
+    font-family:var(--jetbrains-mono);font-size:13px;color:var(--light-purple);
     letter-spacing:0.12em;margin-bottom:18px;
 }
 
-html.dark {
-  background-color: #16181B;
+html.light {
+  background-color: var(--chalk);
   color: #fff;
 }
 
-.dark .menu {
-  background-color: #fff;
+.light nav {
+  background-color: var(--chalk-dim);
   color: #000;
+  background-image:
+    /* front line, brighter/closer */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200' preserveAspectRatio='none'><path d='M0,160 L120,90 L200,140 L300,60 L420,150 L520,110 L620,170 L740,80 L860,150 L980,100 L1100,160 L1200,120' fill='none' stroke='rgba(22,3,43,0.35)' stroke-width='7'/></svg>"),
+    /* back line, dimmer/further */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200' preserveAspectRatio='none'><path d='M0,130 L150,50 L280,120 L400,40 L540,130 L660,70 L800,140 L920,60 L1050,120 L1200,80' fill='none' stroke='rgba(22,3,43,0.18)' stroke-width='7'/></svg>");
 }
 
-.dark .nav-links a:hover,
-.dark .nav-links a:focus {
+.light .nav-links a:hover,
+.light .nav-links a:focus {
   color: #16181B;
 }
 
-.dark .nav-links a {
-  color: #fff;
+.light .nav-links a {
+  color: var(--purple)
 }
 
-.dark a {
-  color: #ff9776;
+.light footer {
+  background-color: var(--chalk-dim)
 }

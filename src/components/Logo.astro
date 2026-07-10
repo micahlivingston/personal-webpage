@@ -1,12 +1,51 @@
 ---
 import { Image } from "astro:assets";
-import logo from "../assets/logo-chalk.svg";
+import logoLight from "../assets/logo-chalk.svg";
+import logoDark from "../assets/logo-purple.svg";
 ---
 
-<Image
-    src={logo}
+<div class="nav-logo">
+  <Image
+    src={logoLight}
     alt="Company Logo"
     width="75"
     height="75"
-    class="logo nav-logo"
-/>
+    class="logo logo-dark"
+  />
+  <Image
+    src={logoDark}
+    alt="Company Logo"
+    width="75"
+    height="75"
+    class="logo logo-light"
+  />
+</div>
+
+<style>
+  .nav-logo {
+    position: relative;
+    width: 75px;
+    height: 75px;
+  }
+
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .logo-light {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  :global(.light) .logo-dark {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  :global(.light) .logo-light {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
