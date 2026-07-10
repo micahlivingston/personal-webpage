@@ -236,9 +236,20 @@ footer p{
     letter-spacing:0.12em;margin-bottom:18px;
 }
 
+/* light styles */
+/*====================================================================*/
+
 html.light {
   background-color: var(--chalk);
   color: #fff;
+}
+
+.light h1 {
+  color: var(--ink);
+}
+
+.light p {
+  color: var(--ink);
 }
 
 .light nav {
@@ -262,4 +273,43 @@ html.light {
 
 .light footer {
   background-color: var(--chalk-dim)
+}
+
+.light .eyebrow {
+  color: var(--steel);
+}
+
+/* item styles */
+/*====================================================================*/
+
+.highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  left: 40px;
+  bottom: 10px;
+  width: 150px;
+  height: 10px;
+  background-color: var(--light-purple); /* your accent color */
+  border-radius: 2px;
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  left: 40px;
+  bottom: 10px;
+  width: 150px;
+  height: 10px;
+  background-color: var(--light-purple); /* your accent color */
+  border-radius: 2px;
 }
