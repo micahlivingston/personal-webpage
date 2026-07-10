@@ -1,6 +1,12 @@
 ---
-import LinkedIn from "../components/LinkedIn.astro"
+const urlPatterns: Record<string, (username: string) => string> = {
+  github: (u) => `https://github.com/${u}`,
+  twitter: (u) => `https://twitter.com/${u}`,
+  linkedin: (u) => `https://linkedin.com/in/${u}`,
+};
+
 const { platform, username } = Astro.props;
+const href = urlPatterns[platform]?.(username) ?? "#";
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a href={href} target="_blank" rel="noopener noreferrer">{platform}</a>
