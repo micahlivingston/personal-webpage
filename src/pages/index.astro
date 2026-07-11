@@ -1,11 +1,37 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import resumeFile from '../assets/resume.pdf'
+import Button from '../components/Button.astro'
 ---
 
 <BaseLayout>
-	<div class="hero">
-		<h1>about me</h1>
-		<p>My name is Micah Livingston</p>
-		<p>I am a student at the Univeristy of Arkansas in Fayetteville, AR. My current areas of study include: Computer Engineering, Mathematics, and Engineering Management.</p>
-	</div>
+	<section id="top" class="hero">
+    	<p class="eyebrow">// student, lifter of weights, follower of Christ </p>
+    	<h1>Micah</h1>
+		<h1><span class="highlight">Livingston</span></h1>
+		<div class="hero-cta">
+			<a href="#about-me" class="btn ghost">learn more</a>
+    		<a href="#contact" class="btn ghost">get in touch</a>
+		</div>
+	</section>
+
+	<section id="about-me">
+		<div class="section-head">
+			<div class="section-num">01</div>
+			<h2>About Me</h2>
+		</div>
+		<hr class="divider">
+	</section>
+
+	<section id="resume">
+		<div class="section-head">
+			<div class="section-num">02</div>
+			<h2>Resume</h2>
+		</div>
+		<hr class="divider">
+		<div class="'section-body">
+			<p>Click here to view my resume!</p><a href="/resume.pdf" class="btn ghost" target="_blank" rel="noopener">view resume</a>
+		</div>
+		
+	</section>
 </BaseLayout>
