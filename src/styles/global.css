@@ -98,6 +98,10 @@ p {
   font-family: var(--manrope);
 }
 
+button {
+  background-color: var(--ink);
+}
+
 /*===========================================================================================================================*/
 
 /* NAVIGATION BAR ===========================================================================================================*/
@@ -380,8 +384,7 @@ html.light {
 
 section{
   padding: 50px;
-  max-width: 100dvw; 
-  max-height: 100dvh;
+  max-width: 65dvw; 
 }
 .section-head{
   display:flex;
@@ -423,6 +426,57 @@ hr.divider{
   border-top:1px solid rgba(237,234,227,0.12);
   margin-bottom: 25px;
   margin-top: 25px;
+}
+
+/*===========================================================================================================================*/
+
+/* DROP DOWN ================================================================================================================*/
+
+.resume-dropdown {
+  border-radius: 8px;
+}
+
+summary {
+  cursor: pointer;
+  font-family: var(--space-grotesk);
+  color: var(--chalk);
+  font-weight: 600;
+  list-style: none; /* removes default triangle marker */
+}
+
+summary::-webkit-details-marker {
+  display: none; /* removes default marker in Safari/Chrome */
+}
+
+#preview-toggle::after {
+  content: "▾";
+  display: inline-block;
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+#preview-toggle.open::after {
+  transform: rotate(180deg);
+}
+
+.preview-content {
+  margin-top: 1rem;
+}
+
+iframe {
+  width: 100%;
+  height: 750px;
+  border: none;
+  border-radius: 4px;
+  background-color: white; /* PDFs render on white regardless of dark mode */
+}
+
+.open-full {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--light-purple);
+  font-family: var(--manrope);
+  font-size: 0.9rem;
 }
 
 /*===========================================================================================================================*/

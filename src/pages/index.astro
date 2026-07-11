@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import resumeFile from '../assets/resume.pdf'
-import Button from '../components/Button.astro'
+import ResumePreview from '../components/ResumePreview.astro';
 ---
 
 <BaseLayout>
@@ -46,12 +45,30 @@ import Button from '../components/Button.astro'
 		<div class="section-body">
 			<p>Take a look at my resume!</p>
 			<div class="section-cta">
-				<a href="/resume.pdf" class="btn ghost" target="_blank" rel="noopener">view resume</a>
-				<a href="/resume.pdf" class="btn ghost" target="_blank" rel="noopener">download resume</a>
+				<a href="/resume.pdf" class="btn ghost" target="_blank" rel="noopener">view full resume</a>
+				<a href="/resume.pdf" class="btn ghost" download="Micah-Livingston-Resume.pdf">download resume</a>
+				<a><button type="button" class="btn ghost" id="preview-toggle">preview resume</button></a>
 			</div>
 		</div>
+		<details class="resume-dropdown" id="resume-details">
+			<summary style="display: none;"></summary>
+			<div class="preview-content">
+				<iframe src="/resume.pdf" title="Resume preview"></iframe>
+			</div>
+		</details>
 		<hr class="divider">
 	</section>
+
+	<script>
+		const toggleBtn = document.getElementById('preview-toggle');
+		const details = document.getElementById('resume-details');
+
+		toggleBtn?.addEventListener('click', () => {
+		details.open = !details.open;
+		toggleBtn.textContent = details.open ? 'hide preview ' : 'preview resume ';
+		toggleBtn.classList.toggle('open', details.open);
+		});
+	</script>
 
 	<section id="contact">
 		<div class="section-head">
