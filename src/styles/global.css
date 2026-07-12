@@ -32,6 +32,7 @@
   --purple:#16032b;
   --navy: #0f172a;
   --light-purple: #7739b9;
+  --hover-purple: #6d39a5;
   --radius:100px;
 }
 
@@ -239,16 +240,14 @@ footer p{
   flex-direction: column;
   justify-content: center;
   position: relative;
-  overflow: hidden;
   min-height: 100dvh;
 }
 
 .hero h1{
-  font-size:clamp(48px,9vw,120px);
   font-weight:700;line-height:0.95;
   max-width: 100dvw;
   font-family: var(--space-grotesk);
-  font-size: 150px
+  font-size: 150px;
 }
 
 .hero p{
@@ -362,12 +361,12 @@ html.light {
   width: fit-content;
 }
 .btn.solid{
-  background:var(--plate);
+  background: rgba(115, 21, 146, 0.317);
   border-color:var(--chalk-dim);
   color:var(--chalk);
 }
 .btn.solid:hover{
-  background: var(--light-purple);
+  background: var(--purple);
 }
 .btn.ghost:hover{
   border-color:var(--chalk);
@@ -384,7 +383,7 @@ html.light {
 
 section{
   padding: 50px;
-  max-width: 65dvw; 
+  max-width: 100dvw; 
 }
 .section-head{
   display:flex;
@@ -407,7 +406,8 @@ section{
   flex-direction: column;
   font-size: 20px;
   align-items: flex-start;
-  margin-left: 0;
+  max-width: 70dvw;
+
 }
 .section-body p{
   font-size: 1rem;
@@ -420,12 +420,14 @@ section{
 .section-cta {
   display:flex;
   flex-wrap:wrap;
+  max-width: 70dvw;
 }
 hr.divider{
   border:none;
   border-top:1px solid rgba(237,234,227,0.12);
   margin-bottom: 25px;
   margin-top: 25px;
+  max-width: 70dvw;
 }
 
 /*===========================================================================================================================*/

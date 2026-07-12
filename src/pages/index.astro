@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ResumePreview from '../components/ResumePreview.astro';
 ---
 
 <BaseLayout>
@@ -43,11 +42,11 @@ import ResumePreview from '../components/ResumePreview.astro';
 		</div>
 		<hr class="divider">
 		<div class="section-body">
-			<p>Take a look at my resume!</p>
+			<p>Take a look at my resume or download a copy for offline review.</p>
 			<div class="section-cta">
 				<a href="/resume.pdf" class="btn ghost" target="_blank" rel="noopener">view full resume</a>
 				<a href="/resume.pdf" class="btn ghost" download="Micah-Livingston-Resume.pdf">download resume</a>
-				<a><button type="button" class="btn ghost" id="preview-toggle">preview resume</button></a>
+				<a><button type="button" class="btn solid" id="preview-toggle">preview resume</button></a>
 			</div>
 		</div>
 		<details class="resume-dropdown" id="resume-details">
@@ -78,10 +77,6 @@ import ResumePreview from '../components/ResumePreview.astro';
 		<hr class="divider">
 		<div class="section-body">
 			<p>Let's get in touch!</p>
-			<p>Personal Email: micahlivingston04@gmail.com</p>
-			<p>School Email: micahl@uark.edu</p>
-			<p>Work Email: coming soon?</p>
-			<p>Phone Number: (918) 807 - 7123</p>
 		</div>
 		<hr class="divider">
 	</section>
