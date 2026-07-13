@@ -18,13 +18,13 @@ const { shortDesc } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
   <Header />
-  <h1>{pageTitle}</h1>
-  <p class="eyebrow"> { shortDesc } </p>
-  <body>
-    <slot />
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
-  </body>
+  <div class="info">
+    <h1>{pageTitle}</h1>
+    
+    <p class="eyebrow"> { shortDesc } </p>
+    <body>
+        <slot />
+    </body>
+  </div>
+  <Footer />
 </html>

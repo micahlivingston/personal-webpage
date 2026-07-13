@@ -93,7 +93,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 60px;
+  padding: 0 40px;
   position: relative;
   overflow: hidden;
   font-family: var(--manrope);
@@ -266,15 +266,6 @@ footer p{
 
 .hero .eyebrow {
   font-family:var(--jetbrains-mono);font-size:23px;color:var(--light-purple);
-  letter-spacing:0.12em;margin-bottom:18px;
-}
-
-/*===========================================================================================================================*/
-
-/* EYEBROW ==================================================================================================================*/
-
-.eyebrow{
-  font-family:var(--jetbrains-mono);font-size:13px;color:var(--light-purple);
   letter-spacing:0.12em;margin-bottom:18px;
 }
 
@@ -482,3 +473,37 @@ iframe {
 }
 
 /*===========================================================================================================================*/
+
+/* Informational Pages ======================================================================================================*/
+.info {
+  padding: 50px;
+  max-width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info h1{
+  font-size: 75px;
+  font-family: var(--lexend-exa);
+  font-weight: 300;
+  padding-left: 30px;
+}
+
+.info .eyebrow{
+  font-family:var(--jetbrains-mono);
+  font-size:13px;
+  color:var(--light-purple);
+  letter-spacing:0.12em;
+}
+
+.info h2{
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.info p{
+  position: relative;
+  font-family:var(--elms-sans);
+  padding-bottom: 20px;
+}
