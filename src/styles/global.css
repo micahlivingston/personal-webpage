@@ -507,3 +507,77 @@ iframe {
   font-family:var(--elms-sans);
   padding-bottom: 20px;
 }
+
+/*===========================================================================================================================*/
+
+/* Contact Page =============================================================================================================*/
+
+.contact {
+  padding: 0px;
+  max-width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact .header {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact h1 {
+  font-size: 100px;
+}
+
+.contact .eyebrow {
+  font-family: var(--jetbrains-mono);
+  font-size: 13px;
+  color: var(--light-purple);
+  letter-spacing: 0.12em;
+  padding: 20px;
+}
+
+.contact .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact .section {
+  background-color: var(--plate);
+  padding: 32px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  min-width: 220px;
+  text-align: center;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  border: 1px solid var(--chalk-dim);
+}
+
+.contact .section:hover {
+  background-color: var(--light-purple);
+  transform: translateY(-2px);
+}
+
+.contact .section:hover .section-value,
+.contact .section:hover .section-label {
+  color: var(--ink);
+}
+
+.contact .section-label {
+  font-family: var(--jetbrains-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--light-purple);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.contact .section-value {
+  font-family: var(--space-grotesk);
+  font-size: 22px;
+  color: var(--chalk);
+}

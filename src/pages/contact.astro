@@ -1,13 +1,32 @@
 ---
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 
 const pageTitle = "Contact";
 const shortDesc = "// Let's get in touch! Feel free to reach out to me via email or connect with me on social media.";
 ---
 
-<BaseLayout pageTitle={pageTitle} shortDesc={shortDesc} >
+<Header></Header>
+<div class="contact">
+    <div class="header">
+        <h1>Contact</h1>
+        <div class="eyebrow">
+            // let's get in touch!
+        </div>
+    </div>
 
-    <p> Example text for the contact page. </p>
-    
-</BaseLayout>
+    <div class="row">
+        <a href="mailto:you@example.com" class="section">
+            <div class="section-label">Email</div>
+            <div class="section-value">you@example.com</div>
+        </a>
+        <a href="tel:+15555555555" class="section">
+            <div class="section-label">Phone</div>
+            <div class="section-value">(555) 555-5555</div>
+        </a>
+    </div>
+</div>
+
+<Footer></Footer>
